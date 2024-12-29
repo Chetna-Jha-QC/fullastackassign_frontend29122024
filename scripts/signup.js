@@ -3,7 +3,7 @@ document.getElementById('signup-form').addEventListener('submit', async (e) => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    const response = await fetch('https://steadfast-lily-toy.glitch.me');
+    const response = await fetch('https://steadfast-lily-toy.glitch.me/users');
     const users = await response.json();
 
     if (users.some(user => user.email === email)) {
@@ -11,7 +11,7 @@ document.getElementById('signup-form').addEventListener('submit', async (e) => {
         return;
     }
 
-    await fetch('https://steadfast-lily-toy.glitch.me', {
+    await fetch('https://steadfast-lily-toy.glitch.me/users', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
