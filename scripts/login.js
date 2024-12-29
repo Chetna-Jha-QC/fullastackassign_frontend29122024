@@ -10,8 +10,8 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
 
     if (user) {
         localStorage.setItem('user', JSON.stringify(user));
-        alert('Login successful.');
-        window.location.href = 'todos.html';
+        alert('Login successful!');
+        window.location.href = './todos.html';
     } else {
         alert('Invalid credentials.');
     }
